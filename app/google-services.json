@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "3852401964",
+    "firebase_url": "https://jbook-33d9e.firebaseio.com",
+    "project_id": "jbook-33d9e",
+    "storage_bucket": "jbook-33d9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3852401964:android:8ee939031a94929a",
+        "android_client_info": {
+          "package_name": "com.example.andres.jbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3852401964-bup0u6a2da5pha4j023oomibqhf5ngoj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.andres.jbook",
+            "certificate_hash": "c7aca8d797cedad38d965dcc6a9cd2204612c4a2"
+          }
+        },
+        {
+          "client_id": "3852401964-sqfljd4c90c6qkdjmpfg58m2vlsa7siq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxPG0q3RGngjisvutOXw2YKGR62Uwx8wo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3852401964-sqfljd4c90c6qkdjmpfg58m2vlsa7siq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
