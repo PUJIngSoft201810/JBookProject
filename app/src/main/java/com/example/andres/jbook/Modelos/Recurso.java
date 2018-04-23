@@ -14,7 +14,7 @@ public abstract class Recurso implements Serializable{
     private String ubicacion;
 
     public  Recurso() {
-
+        //Firebase
     }
 
     public Recurso(String id,String nombre, String descripcion, String estado, String ubicacion) {

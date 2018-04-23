@@ -10,10 +10,18 @@ import android.view.View;
 import android.widget.ExpandableListView;
 
 import com.example.andres.jbook.Modelos.fechaAdaptador;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class FechaReservaSala extends AppCompatActivity {
 
@@ -67,6 +75,49 @@ public class FechaReservaSala extends AppCompatActivity {
     }
 
     private void configureDataBase(){
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar todayDate = Calendar.getInstance();
+        Date todayDateD = todayDate.getTime();
+        String todayString = dateFormat.format(todayDateD);
+
+        todayDate.add(Calendar.DAY_OF_MONTH, 1);
+        todayDate.set(Calendar.HOUR, 23);
+        todayDate.set(Calendar.MINUTE, 59);
+        todayDate.set(Calendar.SECOND, 59);
+        Date tomorrowDate =todayDate.getTime();
+        String tomorrowString = dateFormat.format(tomorrowDate);
+
+        Query horariosReservas = mDatabase.orderByChild("fecha_fin").startAt(todayString).endAt(tomorrowString);
+
+        horariosReservas.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                String nuevaFechaFin = dataSnapshot.child("fecha_fin").getKey();
+                DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
